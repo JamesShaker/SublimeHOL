@@ -6,5 +6,5 @@
 
 	{ "keys": ["ctrl+,", "p"], "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "p();");"}},
 	{ "keys": ["ctrl+,", "b"], "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "b();");"}},
-	{ "keys": ["ctrl+,", "r"], "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "restart();");"}},
+	{ "keys": ["ctrl+,", "r"], "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "restart();");"}}
 ]
