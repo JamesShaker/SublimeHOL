@@ -4,7 +4,7 @@
 	{ "keys": ["ctrl+,", "s"], "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "e(Tactical.Q_TAC Tactic.SUFF_TAC ", "append":");"}},
 	{ "keys": ["ctrl+,", "e"], "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "e(", "append":");"}},
 
-	{ "keys": ["ctrl+,", "p"], "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "p();}},
+	{ "keys": ["ctrl+,", "p"], "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "p();"}},
 	{ "keys": ["ctrl+,", "b"], "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "b();"}},
 	{ "keys": ["ctrl+,", "r"], "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "restart();"}}
 ]
