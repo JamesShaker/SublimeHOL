@@ -13,7 +13,8 @@ class SublimeHOLRepl(SubprocessRepl):
    
     def write(self, command):
         #strip the command of terms and strings and comments
-        stripped_command = re.sub('\`\`([\w\s\S]*?)\`\`','',command)
+        stripped_command = re.sub('“([\w\s\S]*?)”','',command)
+        stripped_command = re.sub('‘([\w\s\S]*?)’','',command)
         stripped_command = re.sub('\`([\w\s\S]*?)\`','',stripped_command)
         stripped_command = re.sub('\"([\w\s\S]*?)\"','',stripped_command)
         stripped_command = re.sub('\“([\w\s\S]*?)\”','',stripped_command)
