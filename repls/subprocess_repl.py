@@ -57,7 +57,7 @@ class SubprocessRepl(Repl):
 
     def __init__(self, encoding, cmd=None, env=None, cwd=None, extend_env=None, soft_quit="", autocomplete_server=False, **kwds):
         super(SubprocessRepl, self).__init__(encoding, **kwds)
-        settings = load_settings('SublimeREPL.sublime-settings')
+        settings = load_settings('SublimeHOL.sublime-settings')
 
         if cmd[0] == "[unsupported]":
             raise Unsupported(cmd[1:])
@@ -68,8 +68,8 @@ class SubprocessRepl(Repl):
             self._autocomplete_server.start()
 
         env = self.env(env, extend_env, settings)
-        env[b"SUBLIMEREPL_AC_PORT"] = str(self.autocomplete_server_port()).encode("utf-8")
-        env[b"SUBLIMEREPL_AC_IP"] = settings.get("autocomplete_server_ip").encode("utf-8")
+        env[b"SUBLIMEHOL_AC_PORT"] = str(self.autocomplete_server_port()).encode("utf-8")
+        env[b"SUBLIMEHOL_AC_IP"] = settings.get("autocomplete_server_ip").encode("utf-8")
 
         if PY3:
             strings_env = {}
@@ -149,7 +149,7 @@ class SubprocessRepl(Repl):
                 import traceback
                 traceback.print_exc()
                 error_message(
-                    "SublimeREPL: obtaining sane environment failed in getenv()\n"
+                    "SublimeHOL: obtaining sane environment failed in getenv()\n"
                     "Check console and 'getenv_command' setting \n"
                     "WARN: Falling back to SublimeText environment")
 

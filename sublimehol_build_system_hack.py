@@ -7,11 +7,11 @@ except ImportError:
     import Queue as queue
 
 RESULTS = None
-HACK_BUILD_SYSTEM = "Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build"
+HACK_BUILD_SYSTEM = "Packages/SublimeHOL/sublimehol_build_system_hack.sublime-build"
 AUTOMATIC_BUILD_SYSTEM = ""
 
 
-class SublimereplBuildSystemHackCommand(sublime_plugin.WindowCommand):
+class SublimeholBuildSystemHackCommand(sublime_plugin.WindowCommand):
     def run(self, cmd):
         RESULTS.put(cmd)
 

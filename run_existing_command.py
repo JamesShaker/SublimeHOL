@@ -7,27 +7,27 @@ import json
 import sublime
 import sublime_plugin
 
-SUBLIMEREPL_DIR = None
-SUBLIMEREPL_USER_DIR = None
+SUBLIMEHOL_DIR = None
+SUBLIMEHOL_USER_DIR = None
 
 def plugin_loaded():
-    global SUBLIMEREPL_DIR
-    global SUBLIMEREPL_USER_DIR
-    SUBLIMEREPL_DIR = "Packages/SublimeREPL"
-    SUBLIMEREPL_USER_DIR = os.path.join(sublime.packages_path(), "User", "SublimeREPL")
+    global SUBLIMEHOL_DIR
+    global SUBLIMEHOL_USER_DIR
+    SUBLIMEHOL_DIR = "Packages/SublimeHOL"
+    SUBLIMEHOL_USER_DIR = os.path.join(sublime.packages_path(), "User", "SublimeHOL")
 
 PY2 = False
 if sys.version_info[0] == 2:
-    SUBLIMEREPL_DIR = os.getcwdu()
-    SUBLIMEREPL_USER_DIR = os.path.join(sublime.packages_path(), "User", "SublimeREPL")
+    SUBLIMEHOL_DIR = os.getcwdu()
+    SUBLIMEHOL_USER_DIR = os.path.join(sublime.packages_path(), "User", "SublimeHOL")
     PY2 = True
 
 # yes, CommandCommmand :) 
 class RunExistingWindowCommandCommand(sublime_plugin.WindowCommand):
     def run(self, id, file):
         """Find and run existing command with id in specified file. 
-        SUBLIMEREPL_USER_DIR is consulted first, and then SUBLIMEREPL_DIR""" 
-        for prefix in (SUBLIMEREPL_USER_DIR, SUBLIMEREPL_DIR):
+        SUBLIMEHOL_USER_DIR is consulted first, and then SUBLIMEHOL_DIR""" 
+        for prefix in (SUBLIMEHOL_USER_DIR, SUBLIMEHOL_DIR):
             path = os.path.join(prefix, file)
             json_cmd = self._find_cmd(id, path)
             if json_cmd:

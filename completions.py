@@ -5,12 +5,12 @@ import sublime_plugin
 
     
 
-class SublimeREPLCompletions(sublime_plugin.EventListener):
+class SublimeHOLCompletions(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         try:
-            from .sublimerepl import manager
+            from .sublimehol import manager
         except ValueError:
-            from sublimerepl import manager
+            from sublimehol import manager
             
         if not view.settings().get("repl"):
             return True

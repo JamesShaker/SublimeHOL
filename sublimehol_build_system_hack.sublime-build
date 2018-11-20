@@ -1,5 +1,5 @@
 {
-	"target": "sublimerepl_build_system_hack",
+	"target": "sublimehol_build_system_hack",
 	"cmd": {
 		"file_path": "${file_path}",
 		"file": "${file}",

@@ -1,7 +1,7 @@
 {
 	// default_extend_env are used to augment any environment variables
 	// that should be visible for all subprocess repls launched within
-	// SublimeREPL. This is a very good place to add PATH extension
+	// SublimeHOL. This is a very good place to add PATH extension
 	// once "PATH": "{PATH}:/home/username/mylocalinstalls/bin" or whatever
 	"default_extend_env": {},
 
@@ -19,7 +19,7 @@
 	// REPLS will share history. If you wish you can disable history altogether
 	"persistent_history_enabled": true,
 
-	// By default SublimeREPL leaves REPL view open once the underlying subprocess
+	// By default SublimeHOL leaves REPL view open once the underlying subprocess
 	// dies or closes connection. This is useful when the process dies for an unexpected
 	// reason as it allows you to inspect it output. If you want. Setting this
 	// to true will cause SublimreREPL to close view once the process died.
@@ -65,7 +65,7 @@
 	// is started so beware!
 	"use_build_system_hack": false,
 
-	// IP address used to setup autocomplete server in sublimerepl.
+	// IP address used to setup autocomplete server in sublimehol.
 	// changing this is usefull when you want to exclude one address
 	// from proxychains/tsocks routing
 	"autocomplete_server_ip": "127.0.0.1",
@@ -79,7 +79,7 @@
 		"octave": "matlab"
 	},
 
-	// If set to true, SublimeREPL will try to append evaluated code to repl
+	// If set to true, SublimeHOL will try to append evaluated code to repl
 	// output before evaluation (e.g. Ctrl+, f)
 	"show_transferred_text": false,
 

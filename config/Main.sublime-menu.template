@@ -3,16 +3,16 @@
         "id": "tools",
         "children":
         [{
-            "caption": "SublimeREPL",
+            "caption": "SublimeHOL",
             "mnemonic": "R",
-            "id": "SublimeREPL",
+            "id": "SublimeHOL",
             "children":
             [
                 // {"command": "repl_open",
                 //  "caption": "Command Caption in Menu",
                 //  "mnemonic": "m",
                 //  "args": {
-                //     "type": "subprocess|telnet",
+                //     "type": "subprocess",
                 //     "encoding": "utf8",
                 //     "cmd": ["bash", "-i"] or "bash -i" on windows,
                 //     "cwd": "$file_path",

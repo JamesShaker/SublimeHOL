@@ -3,9 +3,9 @@
         "id": "tools",
         "children":
         [{
-            "caption": "SublimeREPL",
+            "caption": "SublimeHOL",
             "mnemonic": "R",
-            "id": "SublimeREPL",
+            "id": "SublimeHOL",
             "children":
             [
                 {"caption": "Eval in REPL",
@@ -43,20 +43,20 @@
                 "children":
                 [
                     {
-                        "caption": "SublimeREPL",
+                        "caption": "SublimeHOL",
                         "children":
                         [
                             {
                                 "command": "open_file", "args":
                                 {
-                                    "file": "${packages}/SublimeREPL/SublimeREPL.sublime-settings"
+                                    "file": "${packages}/SublimeHOL/SublimeHOL.sublime-settings"
                                 },
                                 "caption": "Settings – Default"
                             },
                             {
                                 "command": "open_file", "args":
                                 {
-                                    "file": "${packages}/User/SublimeREPL.sublime-settings"
+                                    "file": "${packages}/User/SublimeHOL.sublime-settings"
                                 },
                                 "caption": "Settings – User"
                             },

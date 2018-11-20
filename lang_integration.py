@@ -10,7 +10,7 @@ import socket
 from functools import partial
 from contextlib import closing
 
-SETTINGS_FILE = "SublimeREPL.sublime-settings"
+SETTINGS_FILE = "SublimeHOL.sublime-settings"
 
 class ClojureAutoTelnetRepl(sublime_plugin.WindowCommand):
     def is_running(self, port_str):
@@ -106,10 +106,10 @@ class PythonVirtualenvRepl(sublime_plugin.WindowCommand):
                 "autocomplete_server": True,
                 "extend_env": {
                     "PATH": directory + path_separator + "{PATH}",
-                    "SUBLIMEREPL_ACTIVATE_THIS": activate_file,
+                    "SUBLIMEHOL_ACTIVATE_THIS": activate_file,
                     "PYTHONIOENCODING": "utf-8"
                 },
-                "cmd": [python_executable, "-u", "${packages}/SublimeREPL/config/Python/ipy_repl.py"],
+                "cmd": [python_executable, "-u", "${packages}/SublimeHOL/config/Python/ipy_repl.py"],
                 "cwd": "$file_path",
                 "encoding": "utf8",
                 "syntax": "Packages/Python/Python.tmLanguage",
