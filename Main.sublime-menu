@@ -4,7 +4,7 @@
         "children":
         [{
             "caption": "SublimeHOL",
-            "mnemonic": "R",
+            "mnemonic": "H",
             "id": "SublimeHOL",
             "children":
             [
@@ -14,7 +14,6 @@
                         {"caption": "Selection", "command": "repl_transfer_current", "args": {"scope": "selection"}},
                         {"caption": "File", "command": "repl_transfer_current", "args": {"scope": "file"}},
                         {"caption": "Lines", "command": "repl_transfer_current", "args": {"scope": "lines"}},
-                        {"caption": "Block", "command": "repl_transfer_current", "args": {"scope": "block"}}
                 ]},
                 {"caption": "Transfer to REPL",
                  "children":
@@ -22,7 +21,6 @@
                         {"caption": "Selection", "command": "repl_transfer_current", "args": {"scope": "selection", "action":"view_write"}},
                         {"caption": "File", "command": "repl_transfer_current", "args": {"scope": "file", "action":"view_write"}},
                         {"caption": "Lines", "command": "repl_transfer_current", "args": {"scope": "lines", "action":"view_write"}},
-                        {"caption": "Block", "command": "repl_transfer_current", "args": {"scope": "block", "action":"view_write"}}
                     ]
                 },
                 { "caption": "-" }

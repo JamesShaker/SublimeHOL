@@ -1,0 +1,5 @@
+[
+	{ "keys": ["ctrl+,", "e"], "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "e(", "append":");"}},
+	{ "keys": ["ctrl+,", "g"], "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "g(", "append":");"}},
+	{ "keys": ["ctrl+,", "o"], "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "sg(", "append":");"}},
+]

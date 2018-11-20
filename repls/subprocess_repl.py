@@ -55,7 +55,7 @@ def win_find_executable(executable, env):
 class SubprocessRepl(Repl):
     TYPE = "subprocess"
 
-    def __init__(self, encoding, cmd=None, env=None, cwd=None, extend_env=None, soft_quit="", autocomplete_server=False, **kwds):
+    def __init__(self, encoding, cmd=None, env=None, cwd=None, extend_env=None, soft_quit="", autocomplete_server=False, preexec_fn=None, **kwds):
         super(SubprocessRepl, self).__init__(encoding, **kwds)
         settings = load_settings('SublimeHOL.sublime-settings')
 
@@ -89,8 +89,8 @@ class SubprocessRepl(Repl):
                         env=env,
                         stderr=subprocess.STDOUT,
                         stdin=subprocess.PIPE,
-                        stdout=subprocess.PIPE)
-
+                        stdout=subprocess.PIPE,
+                        preexec_fn=preexec_fn)
         if POSIX:
             flags = fcntl.fcntl(self.popen.stdout, fcntl.F_GETFL)
             fcntl.fcntl(self.popen.stdout, fcntl.F_SETFL, flags | os.O_NONBLOCK)

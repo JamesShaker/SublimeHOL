@@ -1,0 +1,27 @@
+[
+     {
+        "id": "tools",
+        "children":
+        [{
+            "caption": "SublimeHOL",
+            "mnemonic": "H",
+            "id": "SublimeHOL",
+            "children":
+            [
+                {"command": "repl_open", 
+                 "caption": "Open",
+                 "id": "repl_hol",
+                 "mnemonic": "H",
+                 "args": {
+                    "type": "sublime_hol",
+                    "encoding": "utf8",
+                    "cmd": ["hol"],
+                    "cwd": "$file_path",
+                    "external_id": "HOL",
+                    "syntax": "Packages/SublimeHOL/HOL.tmLanguage"
+                    }
+                }
+            ]   
+        }]
+    }
+]
