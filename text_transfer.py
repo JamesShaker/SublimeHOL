@@ -67,7 +67,7 @@ class ReplSend(sublime_plugin.TextCommand):
 
 
 class ReplTransferCurrent(sublime_plugin.TextCommand):
-    def run(self, edit, scope="selection", action="send"):
+    def run(self, edit, scope="selection", action="send", prepend="", append=""):
         text = ""
         if scope == "selection":
             text = self.selected_text()
@@ -77,6 +77,7 @@ class ReplTransferCurrent(sublime_plugin.TextCommand):
             text = self.selected_functions()
         elif scope == "file":
             text = self.selected_file()
+        text = prepend + text + append
         cmd = "repl_" + action
         self.view.window().run_command(cmd, {"external_id": self.repl_external_id(), "text": text})
 
