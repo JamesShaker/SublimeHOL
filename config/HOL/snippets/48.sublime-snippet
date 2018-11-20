@@ -1,0 +1,11 @@
+<snippet>
+    <content>
+        <![CDATA[𝕌ᵣ]]>
+    </content>
+    <tabTrigger>
+        RUNIV
+    </tabTrigger>
+    <scope>
+        source.hol
+    </scope>
+</snippet>

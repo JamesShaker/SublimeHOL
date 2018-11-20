@@ -1,0 +1,133 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+name: HOL
+file_extensions:
+  - sml
+  - sig
+scope: source.hol
+
+variables:
+  identifier: \b[[:alpha:]_][[:alnum:]_]*\b
+  keyword: \b(EQUAL|GREATER|LESS|NONE|SOME|abstraction|abstype|and|andalso|array|as|before|bool|case|char|datatype|do|else|end|eqtype|exception|exn|false|fn|fun|functor|handle|if|in|include|infix|infixr|int|let|list|local|nil|nonfix|not|o|of|op|open|option|orelse|overload|print|raise|real|rec|ref|sharing|sig|signature|string|struct|structure|substring|then|true|type|unit|val|vector|where|while|with|withtype|word)\b
+
+contexts:
+  main:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character
+    - match: '\bopen\b'
+      scope: keyword.control.import.hol
+
+    - match: '"'
+      scope: punctuation.definition.string.begin.hol
+      push: double_quoted_string
+
+    - match: '``'
+      push: double_term_ansi
+
+    - match: '`'
+      push: single_term_ansi
+
+    - match: '“'
+      push: double_term_unicode
+
+    - match: '‘'
+      push: single_term_unicode
+
+    # Comments begin with a '//' and finish at the end of the line
+    - match: '\(\*'
+      scope: punctuation.definition.comment.hol
+      push: comment
+
+    # Keywords are if, else for and while.
+    # Note that blackslashes don't need to be escaped within single quoted
+    # strings in YAML. When using single quoted strings, only single quotes
+    # need to be escaped: this is done by using two single quotes next to each
+    # other.
+    - match: '\b(if|else|for|while)\b'
+      scope: keyword.control.hol
+
+    # Numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.hol
+
+    # constants
+    - match: '\b(true|false)\b'
+      scope: constant.language.hol
+
+    # comparison operators
+    - match: '<\=|>\=|<|>|\!\=|\=|:=|>>|>-'
+      scope: keyword.operator.assignment.hol
+
+    # arithmetic operators
+    - match: '\*|\+|-|\/|~|\^|div|mod|::|@'
+      scope: keyword.operator.arithmetic.hol
+
+    # logical operators
+    - match: 'orelse|andalso|not'
+      scope: keyword.operator.logical.hol
+
+    # conditional
+    - match: '\bif\b|\bthen\b|\belse\b'
+      scope: keyword.control.conditional.hol
+
+    # types
+    - match: '\b(int|real|bool|char|string)\b'
+      scope: storage.type.hol
+
+    # predefined functions
+    - match: '\b(real|floor|ceil|round|trunc|ord|str|hd|tl|explote|implode|null)\b'
+      scope: support.function.predefined.hol
+
+    - match: '->|list'
+      source: keyword.operator.constructor.hol
+
+    - match: 'print\b'
+      scope: support.function.builtin.hol
+
+    - match: '^fun\s'
+      scope: storage.type.function.hol
+
+    - match: 'val\b'
+      scope: storage.type.hol
+
+    - match: '(?<=fun\s)(\b\w+\b)\s\b(\w+?)\s'
+      captures:
+        1: entity.name.function.hol
+        2: variable.parameter.hol
+
+  double_term_ansi:
+    - meta_scope: string.quoted.other.hol
+    - match: '``'
+      pop: true
+
+  single_term_ansi:
+    - meta_scope: string.quoted.other.hol
+    - match: '`'
+      pop: true
+
+  double_term_unicode:
+    - meta_scope: string.quoted.other.hol
+    - match: '”'
+      pop: true
+
+  single_term_unicode:
+    - meta_scope: string.quoted.other.hol
+    - match: '’'
+      pop: true
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.hol
+    - match: '\\.'
+      scope: constant.character.escape.hol
+    - match: '"'
+      scope: punctuation.definition.string.end.hol
+      pop: true
+
+  
+  comment:
+    - meta_scope: comment.line.hol
+    - match: '\*\)'
+      pop: true
+
+  

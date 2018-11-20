@@ -1,0 +1,11 @@
+<snippet>
+    <content>
+        <![CDATA[∩]]>
+    </content>
+    <tabTrigger>
+        INTER
+    </tabTrigger>
+    <scope>
+        source.hol
+    </scope>
+</snippet>
