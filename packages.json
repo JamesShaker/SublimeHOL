@@ -2,8 +2,8 @@
     "schema_version": "3.0.0",
     "packages": [{
         "name": "SublimeHOL",
-        "details": "https://github.com/wuub/SublimeHOL",
-        "description": "SublimeHOL - run an interpreter inside ST2 (Clojure, CoffeeScript, F#, Groovy, Haskell, Lua, MozRepl, NodeJS, Python + virtualenv, R, Ruby, Scala...)",
+        "details": "https://github.com/JamesShaker/SublimeHOL",
+        "description": "SublimeHOL - A HOL Development Environment built on top of SublimeREPL",
         "releases": [
             {
                 "sublime_text": "*",

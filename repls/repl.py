@@ -12,8 +12,7 @@ class NoReplError(LookupError):
     pass
 
 class Repl(object):
-    """Class that represents a process that is being executed.
-       For example this can be python, bash or a telnet session"""
+    """Class that represents a process that is being executed."""
 
     TYPE = "<base>"
 

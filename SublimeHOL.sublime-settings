@@ -15,8 +15,6 @@
 	// a new group if it isn't open.
 	"open_repl_in_group": true,
 
-	// Persistent history is stored per REPL external_id, it means that all python
-	// REPLS will share history. If you wish you can disable history altogether
 	"persistent_history_enabled": true,
 
 	// By default SublimeHOL leaves REPL view open once the underlying subprocess
@@ -35,12 +33,6 @@
 	// Some terminals output ascii color codes which are not currently supported
 	// enable this option to filter them out.
 	"filter_ascii_color_codes": true,
-
-	// Where to look for python virtualenvs
-	"python_virtualenv_paths": [
-		"~/.virtualenvs",  // virtualenvwrapper
-		"~/.venv"  // venv.bash https://github.com/wuub/venv
-	],
 
 	// Use arrows for history navigation instead of Alt+[P|N]/Ctrl+[P|N]
 	"history_arrows": true,
@@ -69,15 +61,6 @@
 	// changing this is usefull when you want to exclude one address
 	// from proxychains/tsocks routing
 	"autocomplete_server_ip": "127.0.0.1",
-
-	// Mapping is used, when external_id of REPL does not match
-	// source.[xxx] scope of syntax definition used to highlight
-	// files from which text is being transfered. For example octave
-	// repls use source.matlab syntax files and w/o this mapping text transfer
-	// will not work
-	"external_id_mapping": {
-		"octave": "matlab"
-	},
 
 	// If set to true, SublimeHOL will try to append evaluated code to repl
 	// output before evaluation (e.g. Ctrl+, f)
