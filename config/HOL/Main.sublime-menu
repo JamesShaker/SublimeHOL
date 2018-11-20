@@ -11,14 +11,14 @@
                 {"command": "repl_open", 
                  "caption": "Open",
                  "id": "repl_hol",
-                 "mnemonic": "H",
+                 "mnemonic": "O",
                  "args": {
                     "type": "sublime_hol",
                     "encoding": "utf8",
                     "cmd": ["hol"],
                     "cwd": "$file_path",
                     "external_id": "HOL",
-                    "syntax": "Packages/SublimeHOL/HOL.tmLanguage"
+                    "syntax": "Packages/SublimeHOL/config/HOL/HOL.tmLanguage"
                     }
                 }
             ]   
