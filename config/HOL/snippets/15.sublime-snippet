@@ -1,11 +1,5 @@
 <snippet>
-    <content>
-        <![CDATA[∉]]>
-    </content>
-    <tabTrigger>
-        NOTIN
-    </tabTrigger>
-    <scope>
-        source.hol
-    </scope>
+    <content><![CDATA[∉]]></content>
+    <tabTrigger>NOTIN</tabTrigger>
+    <scope>source.hol</scope>
 </snippet>

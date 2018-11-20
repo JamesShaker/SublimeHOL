@@ -1,11 +1,5 @@
 <snippet>
-    <content>
-        <![CDATA[⊆ᵣ]]>
-    </content>
-    <tabTrigger>
-        RSUBSET
-    </tabTrigger>
-    <scope>
-        source.hol
-    </scope>
+    <content><![CDATA[⊆ᵣ]]></content>
+    <tabTrigger>RSUBSET</tabTrigger>
+    <scope>source.hol</scope>
 </snippet>

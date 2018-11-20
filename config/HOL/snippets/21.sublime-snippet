@@ -1,11 +1,5 @@
 <snippet>
-    <content>
-        <![CDATA[ζ]]>
-    </content>
-    <tabTrigger>
-        &apos;f
-    </tabTrigger>
-    <scope>
-        source.hol
-    </scope>
+    <content><![CDATA[ζ]]></content>
+    <tabTrigger>&apos;f</tabTrigger>
+    <scope>source.hol</scope>
 </snippet>
