@@ -15,6 +15,7 @@ from datetime import datetime
 import sublime
 import sublime_plugin
 
+import ansi
 try:
     import queue
     from . import sublimehol_build_system_hack
@@ -325,8 +326,11 @@ class ReplView(object):
             unistr = re.sub(r'.\x08', '', unistr)
 
         # string is assumed to be already correctly encoded
-        self._view.run_command("repl_insert_text", {"pos": self._output_end - self._prompt_size, "text": unistr})
-        self._view.run_command("ansi")
+        reg_start = self._output_end - self._prompt_size
+        self._view.run_command("repl_insert_text", {"pos": reg_start, "text": unistr})
+        added_region = ansi.AnsiRegion(ansi.ansi.scope)
+        added_region.add(reg_start,reg_start + len(uninstr))
+        self._view.run_command("ansi",{"regions":added_region})
         self._output_end += len(unistr)
         self.adjust_end()
         self._view.show(self.input_region)
