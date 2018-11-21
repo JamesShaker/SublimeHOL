@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[λ]]></content>
-    <tabTrigger>\\\\</tabTrigger>
-    <scope>source.hol</scope>
+    <content><![CDATA[∃]]></content>
+    <tabTrigger>?</tabTrigger>
+    <scope>string.quoted.other.hol</scope>
 </snippet>

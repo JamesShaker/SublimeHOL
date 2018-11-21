@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[⊆]]></content>
-    <tabTrigger>SUBSET</tabTrigger>
-    <scope>source.hol</scope>
+    <content><![CDATA[∩]]></content>
+    <tabTrigger>INTER</tabTrigger>
+    <scope>string.quoted.other.hol</scope>
 </snippet>

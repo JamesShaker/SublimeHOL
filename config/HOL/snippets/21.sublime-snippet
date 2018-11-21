@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[ζ]]></content>
-    <tabTrigger>&apos;f</tabTrigger>
-    <scope>source.hol</scope>
+    <content><![CDATA[θ]]></content>
+    <tabTrigger>&apos;h</tabTrigger>
+    <scope>string.quoted.other.hol</scope>
 </snippet>

@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[𝕌ᵣ]]></content>
-    <tabTrigger>RUNIV</tabTrigger>
-    <scope>source.hol</scope>
+    <content><![CDATA[∪ᵣ]]></content>
+    <tabTrigger>RUNION</tabTrigger>
+    <scope>string.quoted.other.hol</scope>
 </snippet>

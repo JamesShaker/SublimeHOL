@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[⇎]]></content>
-    <tabTrigger>&lt;=/=&gt;</tabTrigger>
-    <scope>source.hol</scope>
+    <content><![CDATA[⇒]]></content>
+    <tabTrigger>==&gt;</tabTrigger>
+    <scope>string.quoted.other.hol</scope>
 </snippet>

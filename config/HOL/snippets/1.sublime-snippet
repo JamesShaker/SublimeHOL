@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[∧]]></content>
-    <tabTrigger>/\\\\</tabTrigger>
+    <content><![CDATA[‘’]]></content>
+    <tabTrigger>`</tabTrigger>
     <scope>source.hol</scope>
 </snippet>

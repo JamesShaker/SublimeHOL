@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[𝕌]]></content>
-    <tabTrigger>UNIV</tabTrigger>
-    <scope>source.hol</scope>
+    <content><![CDATA[∪]]></content>
+    <tabTrigger>UNION</tabTrigger>
+    <scope>string.quoted.other.hol</scope>
 </snippet>

@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[ν]]></content>
-    <tabTrigger>&apos;m</tabTrigger>
-    <scope>source.hol</scope>
+    <content><![CDATA[ο]]></content>
+    <tabTrigger>&apos;o</tabTrigger>
+    <scope>string.quoted.other.hol</scope>
 </snippet>
