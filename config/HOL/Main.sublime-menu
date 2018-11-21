@@ -9,7 +9,7 @@
             "children":
             [
                 {"command": "repl_open", 
-                 "caption": "Open",
+                 "caption": "Open REPL",
                  "id": "repl_hol",
                  "mnemonic": "O",
                  "args": {
