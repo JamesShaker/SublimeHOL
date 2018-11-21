@@ -739,7 +739,7 @@ class ReplKillCommand(sublime_plugin.TextCommand):
 class SublimeHOLListener(sublime_plugin.EventListener):
     def on_selection_modified(self, view):
         rv = manager.repl_view(view)
-        if rv:
+        if rv and not view.settings().get("ansi_in_progress", False):
             rv.on_selection_modified()
 
     def on_close(self, view):
