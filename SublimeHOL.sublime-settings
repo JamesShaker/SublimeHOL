@@ -1,5 +1,5 @@
 {
-	//GENERAL REPL SETTINGS
+	//GENERAL REPL SETTINGS - Defaults licensed under GPLv2 (see GPL-LICENSE.TXT)
 	
 	// default_extend_env are used to augment any environment variables
 	// that should be visible for all subprocess repls launched within
@@ -32,8 +32,7 @@
 	// repl starts and it's output is parsed as an environment
 	"getenv_command": ["/bin/bash", "--login", "-c", "env"],
 
-	// Some terminals output ascii color codes which are not currently supported
-	// enable this option to filter them out.
+	// Some terminals output ascii color codes enable this option to filter them out.
 	"filter_ascii_color_codes": false,
 
 	// Use arrows for history navigation instead of Alt+[P|N]/Ctrl+[P|N]
@@ -73,7 +72,7 @@
 	// is in the same tab group as the view from which the code is sent.
 	"focus_view_on_transfer": true,
 
-	//ANSI SETTINGS
+	//ANSI SETTINGS - Defaults licensed under MIT (see MIT-LICENSE.TXT)
 
 	"ANSI_FG": [
       {"scope": "black", "code": "\\x1b\\[(0{,2};)?30m", "color": "#000000"},

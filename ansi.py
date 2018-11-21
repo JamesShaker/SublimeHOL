@@ -147,11 +147,6 @@ class AnsiCommand(sublime_plugin.TextCommand):
             return
         view.settings().set("ansi_in_progress", True)
 
-        # if the syntax has not already been changed to ansi this means the command has
-        # been run via the sublime console therefore the syntax must be changed manually
-        if view.settings().get("syntax") != "Packages/SublimeHOL/ANSI/ANSI.tmLanguage":
-            view.settings().set("syntax", "Packages/SublimeHOL/ANSI/ANSI.tmLanguage")
-
         view.settings().set("ansi_enabled", True)
         view.settings().set("color_scheme", "Packages/SublimeHOL/ANSI/ansi.tmTheme")
         view.settings().set("draw_white_space", "none")
@@ -228,37 +223,6 @@ class AnsiCommand(sublime_plugin.TextCommand):
         for ansi in ansi_definitions():
             view.erase_regions(ansi.scope)
 
-
-class UndoAnsiCommand(sublime_plugin.WindowCommand):
-
-    def run(self):
-        view = self.window.active_view()
-        # if ansi is in progress or don't have ansi_in_progress setting
-        # don't run the command
-        if view.settings().get("ansi_in_progress", True):
-            debug(view, "oops ... the ansi command is already executing")
-            return
-        view.settings().set("ansi_in_progress", True)
-
-        # if the syntax has not already been changed from ansi this means the command has
-        # been run via the sublime console therefore the syntax must be changed manually
-        if view.settings().get("syntax") == "Packages/SublimeHOL/ANSI/ANSI.tmLanguage":
-            view.settings().set("syntax", "Packages/Text/Plain text.tmLanguage")
-
-        view.settings().erase("ansi_enabled")
-        view.settings().erase("color_scheme")
-        view.settings().erase("draw_white_space")
-
-        view.run_command("undo")
-        for ansi in ansi_definitions():
-            view.erase_regions(ansi.scope)
-
-        # restore the view's original scratch and read only settings
-        view.set_scratch(view.settings().get("ansi_scratch", False))
-        view.settings().erase("ansi_scratch")
-        view.settings().erase("ansi_in_progress")
-        view.settings().erase("ansi_size")
-
 class AnsiColorBuildCommand(Default.exec.ExecCommand):
 
     process_trigger = "on_finish"
@@ -289,7 +253,7 @@ class AnsiColorBuildCommand(Default.exec.ExecCommand):
 
     def on_data_process(self, proc, data):
         view = self.output_view
-        if not view.settings().get("syntax") == "Packages/SublimeHOL/ANSI/ANSI.tmLanguage":
+        if not view.settings().get("repl",False):
             super(AnsiColorBuildCommand, self).on_data(proc, data)
             return
 
@@ -345,7 +309,7 @@ class AnsiColorBuildCommand(Default.exec.ExecCommand):
         super(AnsiColorBuildCommand, self).on_finished(proc)
         if self.process_trigger == "on_finish":
             view = self.output_view
-            if view.settings().get("syntax") == "Packages/SublimeHOL/ANSI/ANSI.tmLanguage":
+            if view.settings().get("repl",False):
                 view.run_command("ansi", args={"clear_before": True})
 
 

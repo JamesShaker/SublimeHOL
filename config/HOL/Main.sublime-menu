@@ -17,7 +17,8 @@
                     "encoding": "utf8",
                     "cmd": ["hol"],
                     "cwd": "$file_path",
-                    "external_id": "HOL"
+                    "external_id": "HOL",
+                    "syntax": "Packages/SublimeHOL/config/HOL/HOL.sublime-syntax"
                     }
                 }
             ]   

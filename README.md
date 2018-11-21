@@ -1,1 +1,1 @@
-SublimeHOL is an environment for working in HOL within the SublimeText Editor built on top of a heavily modified and trimmed down version of SublimeHOL
+SublimeHOL - A HOL Development Environment built on top of slimmed down, heavily modified versions of SublimeREPL (https://github.com/wuub/SublimeREPL), SublimeANSI (https://github.com/aziz/SublimeANSI), and SML-syntax (https://github.com/Takaia/SML-syntax) hackily put together.
