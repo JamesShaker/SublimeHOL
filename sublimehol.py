@@ -319,14 +319,15 @@ class ReplView(object):
 
     def write(self, unistr):
         """Writes output from Repl into this view."""
-        # remove color codes
+        # remove color codes or remove from length count
+        noc_unistr = re.sub(r'\033\[\d*(;\d*)?\w', '', unistr)
+        noc_unistr = re.sub(r'.\x08', '', no_cunistr)
         if self._filter_color_codes:
-            unistr = re.sub(r'\033\[\d*(;\d*)?\w', '', unistr)
-            unistr = re.sub(r'.\x08', '', unistr)
+            unistr = noc_unistr
 
         # string is assumed to be already correctly encoded
         self._view.run_command("repl_insert_text", {"pos": self._output_end - self._prompt_size, "text": unistr})
-        self._output_end += len(unistr)
+        self._output_end += len(noc_unistr)
         self._view.show(self.input_region)
 
     def write_prompt(self, unistr):
