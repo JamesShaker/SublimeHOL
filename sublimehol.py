@@ -327,7 +327,7 @@ class ReplView(object):
         # string is assumed to be already correctly encoded
         self._view.run_command("repl_insert_text", {"pos": self._output_end - self._prompt_size, "text": unistr})
         self._view.run_command("ansi")
-        self._output_end += len(noc_unistr)
+        self._output_end += len(unistr)
         self.adjust_end()
         self._view.show(self.input_region)
 
