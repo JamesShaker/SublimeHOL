@@ -321,7 +321,7 @@ class ReplView(object):
         """Writes output from Repl into this view."""
         # remove color codes or remove from length count
         noc_unistr = re.sub(r'\033\[\d*(;\d*)?\w', '', unistr)
-        noc_unistr = re.sub(r'.\x08', '', no_cunistr)
+        noc_unistr = re.sub(r'.\x08', '', noc_unistr)
         if self._filter_color_codes:
             unistr = noc_unistr
 
