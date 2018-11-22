@@ -220,6 +220,9 @@ class ReplView(object):
             self._window.focus_view(oldview)
             self._window.focus_view(view)
 
+        #setup ANSI
+        self._view.run_command('ansi')
+        
         # begin refreshing attached view
         self.update_view_loop()
 
