@@ -42,6 +42,7 @@ class Repl(object):
         self.suppress_echo = suppress_echo
         self.additional_scopes = additional_scopes or []
         self.apiv2 = apiv2
+        self.store_dict = {}
 
     def autocomplete_available(self):
         return False
@@ -99,3 +100,5 @@ class Repl(object):
                 self.reset_decoder()
             if output:
                 return output
+    def set_ref(self,ref_string,ref_obj):
+        self.store_dict[ref_string] = ref_obj

@@ -161,6 +161,7 @@ class ReplView(object):
 
         #create writer queue and thread
         self._work_queue = queue.Queue()
+        self.repl.set_ref("print_queue",self._work_queue)
         self._worker     = threading.Thread(target=self._write_worker)
         self._worker.start()
 
