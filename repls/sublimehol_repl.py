@@ -32,8 +32,8 @@ class SublimeHOLRepl(SubprocessRepl):
         deps = list(set(open_deps + dot_deps))
         dep_string = ""
         for dep in deps:
-            if dep != "":
-                dep_string += 'load "' + dep + '";'
+            if dep != "" and dep != "HOL_Interactive":
+                dep_string += 'load "' + dep + '";\n'
 
         #run final command
         new_cmd = dep_string + command
