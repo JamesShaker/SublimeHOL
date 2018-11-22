@@ -16,6 +16,7 @@ import sublime
 import sublime_plugin
 
 try:
+    from . import ansi
     import queue
     from . import sublimehol_build_system_hack
     from . import repls
@@ -23,6 +24,7 @@ try:
     unicode_type = str
     PY2 = False
 except ImportError:
+    import ansi
     import sublimehol_build_system_hack
     import repls
     from repllibs import PyDbLite
@@ -156,6 +158,11 @@ class ReplView(object):
         self._repl_launch_args = repl_restart_args
         # list of callable(repl) to handle view close events
         self.call_on_close = []
+
+        #create writer queue and thread
+        self._work_queue = queue.Queue()
+        self._worker     = threading.Thread(target=self._write_worker)
+        self._worker.start()
 
         if syntax:
             view.set_syntax_file(syntax)
@@ -324,12 +331,57 @@ class ReplView(object):
             unistr = re.sub(r'\033\[\d*(;\d*)?\w', '', unistr)
             unistr = re.sub(r'.\x08', '', unistr)
 
-        # string is assumed to be already correctly encoded
-        self._view.run_command("repl_insert_text", {"pos": self._output_end - self._prompt_size, "text": unistr})
-        self._view.run_command("ansi")
-        self._output_end += len(unistr)
-        self.adjust_end()
-        self._view.show(self.input_region)
+        self._work_queue.put(unistr)
+
+    def _write_worker(self):
+        while True:
+            unistr = self._work_queue.get()
+            if unistr is None:
+                break
+            # replace unsupported ansi escape codes before going forward: 2m 4m 5m 7m 8m
+            unsupported_pattern = r'\x1b\[(0;)?[24578]m'
+            str_data = re.sub(unsupported_pattern, "\x1b[1m", unistr)
+
+            # find ANSI codes
+            remove_pattern = r'(\x1b\[[0-9;]*m)+'
+            ansi_codes = re.finditer(remove_pattern, str_data)
+            ansi_codes = list(ansi_codes)
+            if ansi_codes:
+                # find all regions
+                ansi_regions = []
+                for ansi_def in ansi.ansi_definitions(str_data):
+                    if re.search(ansi_def.regex, str_data):
+                        reg = re.finditer(ansi_def.regex, str_data)
+                        new_region = ansi.AnsiRegion(ansi_def.scope)
+                        for m in reg:
+                            new_region.add(*m.span())
+                        ansi_regions.append(new_region)
+
+                # remove codes
+                ansi_codes.reverse()
+                for c in ansi_codes:
+                    to_remove = c.span()
+                    for r in ansi_regions:
+                        r.cut_area(*to_remove)
+                out_data = re.sub(remove_pattern, "", str_data)
+
+                # create json serialable region representation
+                json_ansi_regions = {}
+                shift_val = self._view.size()
+                for region in ansi_regions:
+                    region.shift(shift_val)
+                    json_ansi_regions.update(region.jsonable())
+            else:
+                out_data = str_data
+                json_ansi_regions = None
+            # send on_data without ansi codes
+            self._view.run_command("repl_insert_text", {"pos": self._view.size(), "text": out_data})
+
+            # send ansi command
+            if json_ansi_regions:
+                self._view.run_command('ansi', args={"regions": json_ansi_regions})
+            self._output_end += len(out_data)
+            self._view.show(self.input_region)
 
     def write_prompt(self, unistr):
         """Writes prompt from REPL into this view. Prompt is treated like

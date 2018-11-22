@@ -1,5 +1,5 @@
 [
-    {
+     {
         "id": "tools",
         "children":
         [{
@@ -8,21 +8,20 @@
             "id": "SublimeHOL",
             "children":
             [
+                {"command": "hol_start", 
+                 "caption": "Open REPL",
+                 "mnemonic": "O",
+                },
+                { "caption": "-" },
                 {"caption": "Eval in REPL",
                  "children":
                     [
                         {"caption": "Selection", "command": "repl_transfer_current", "args": {"scope": "selection"}},
-                        {"caption": "File", "command": "repl_transfer_current", "args": {"scope": "file"}},
+                        {"caption": "Selection (Quiet)", "args": {"scope": "selection", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec()"}},
                         {"caption": "Lines", "command": "repl_transfer_current", "args": {"scope": "lines"}},
+                        {"caption": "Lines (Quiet)", "command": "repl_transfer_current", "args": {"scope": "lines", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec()"}}
+                        {"caption": "File", "command": "repl_transfer_current", "args": {"scope": "file"}},
                 ]},
-                {"caption": "Transfer to REPL",
-                 "children":
-                    [
-                        {"caption": "Selection", "command": "repl_transfer_current", "args": {"scope": "selection", "action":"view_write"}},
-                        {"caption": "File", "command": "repl_transfer_current", "args": {"scope": "file", "action":"view_write"}},
-                        {"caption": "Lines", "command": "repl_transfer_current", "args": {"scope": "lines", "action":"view_write"}},
-                    ]
-                },
                 {"caption": "Custom Selection Eval in REPL",
                  "children":
                     [
@@ -30,6 +29,14 @@
                         { "caption":"Subgoal", "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "e((fn q => BasicProvers.byA(q,ALL_TAC)) ", "append":");"}},
                         { "caption":"Sufficient Condition", "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "e(Tactical.Q_TAC Tactic.SUFF_TAC ", "append":");"}},
                         { "caption":"Tactic", "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "e(", "append":");"}}
+                ]},
+                {"caption": "Custom Line Eval in REPL",
+                 "children":
+                    [
+                        { "caption":"Goal", "command": "repl_transfer_current", "args": {"scope": "lines", "prepend": "g(", "append":");"}},
+                        { "caption":"Subgoal", "command": "repl_transfer_current", "args": {"scope": "lines", "prepend": "e((fn q => BasicProvers.byA(q,ALL_TAC)) ", "append":");"}},
+                        { "caption":"Sufficient Condition", "command": "repl_transfer_current", "args": {"scope": "lines", "prepend": "e(Tactical.Q_TAC Tactic.SUFF_TAC ", "append":");"}},
+                        { "caption":"Tactic", "command": "repl_transfer_current", "args": {"scope": "lines", "prepend": "e(", "append":");"}}
                 ]},
                 {"caption": "REPL Control",
                  "children":
@@ -46,11 +53,10 @@
                         { "caption":"Print Goal at Top", "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "set_trace \"Goalstack.print_goal_at_top\" (1 - current_trace \"Goalstack.print_goal_at_top\");"}},
                         { "caption":"Print Free Variables", "command": "repl_transfer_current", "args": {"scope": "empty", "prepend": "set_trace \"Goalstack.print_goal_fvs\" (1 - current_trace \"Goalstack.print_goal_fvs\");"}}
                 ]}, 
-                { "caption": "-" }
-            ]
+
+            ]   
         }]
     },
-
     {
         "caption": "Preferences",
         "mnemonic": "n",
