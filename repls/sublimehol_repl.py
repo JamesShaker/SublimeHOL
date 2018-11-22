@@ -10,6 +10,7 @@ class SublimeHOLRepl(SubprocessRepl):
 
     def __init__(self, encoding, cmd=None, **kwds):
         super(SublimeHOLRepl, self).__init__(encoding, cmd=cmd, preexec_fn=os.setsid, **kwds)
+        self.write("current_backend := PPBackEnd.vt100_terminal;")
    
     def write(self, command):
         #strip the command of terms and strings and comments
