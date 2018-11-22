@@ -43,7 +43,7 @@ class SublimeHOLRepl(SubprocessRepl):
         if sig == signal.SIGTERM:
             self._killed = True
         out_queue = self.store_dict.get("print_queue",None)
-        elif sig == signal.SIGINT and out_queue:
+        if sig == signal.SIGINT and out_queue:
             with out_queue.mutex:
                 out_queue.queue.clear()
         if self.is_alive():
