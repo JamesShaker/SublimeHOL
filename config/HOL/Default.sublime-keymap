@@ -1,6 +1,6 @@
 [
-{ "keys": ["ctrl+,", "q", "h"], "command": "repl_transfer_current", "args": {"scope": "selection", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec()"}},
-{ "keys": ["ctrl+,", "q", "l"], "command": "repl_transfer_current", "args": {"scope": "lines", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec()"}},
+{ "keys": ["ctrl+,", "q", "h"], "command": "repl_transfer_current", "args": {"scope": "selection", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec();"}},
+{ "keys": ["ctrl+,", "q", "l"], "command": "repl_transfer_current", "args": {"scope": "lines", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec();"}},
 
 { "keys": ["ctrl+,", "h"], "command": "repl_transfer_current", "args": {"scope": "selection"}},
 { "keys": ["ctrl+,", "g"], "command": "repl_transfer_current", "args": {"scope": "selection", "prepend": "g(", "append":");"}},

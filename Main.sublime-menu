@@ -17,9 +17,9 @@
                  "children":
                     [
                         {"caption": "Selection", "command": "repl_transfer_current", "args": {"scope": "selection"}},
-                        {"caption": "Selection (Quiet)", "args": {"scope": "selection", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec()"}},
+                        {"caption": "Selection (Quiet)", "args": {"scope": "selection", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec();"}},
                         {"caption": "Lines", "command": "repl_transfer_current", "args": {"scope": "lines"}},
-                        {"caption": "Lines (Quiet)", "command": "repl_transfer_current", "args": {"scope": "lines", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec()"}},
+                        {"caption": "Lines (Quiet)", "command": "repl_transfer_current", "args": {"scope": "lines", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec();"}},
                         {"caption": "File", "command": "repl_transfer_current", "args": {"scope": "file"}}
                 ]},
                 {"caption": "Custom Selection Eval in REPL",
