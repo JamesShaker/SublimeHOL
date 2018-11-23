@@ -5,8 +5,8 @@ import signal
 from sublime import load_settings, error_message
 from .subprocess_repl import SubprocessRepl
 
-class SublimeHOLRepl(SubprocessRepl):
-    TYPE = "sublime_hol"
+class HOLRepl(SubprocessRepl):
+    TYPE = "hol_repl"
 
     def __init__(self, encoding, cmd=None, **kwds):
         super(SublimeHOLRepl, self).__init__(encoding, cmd=cmd, preexec_fn=os.setsid, **kwds)

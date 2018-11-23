@@ -23,7 +23,7 @@ if sys.version_info[0] == 2:
     PY2 = True
 
 # yes, CommandCommmand :) 
-class RunExistingWindowCommandCommand(sublime_plugin.WindowCommand):
+class HolRunExistingWindowCommandCommand(sublime_plugin.WindowCommand):
     def run(self, id, file):
         """Find and run existing command with id in specified file. 
         SUBLIMEHOL_USER_DIR is consulted first, and then SUBLIMEHOL_DIR""" 

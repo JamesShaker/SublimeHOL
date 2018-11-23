@@ -1,5 +1,5 @@
 [
-	{ "keys": ["up"], "command": "repl_view_previous",
+	{ "keys": ["up"], "command": "hol_repl_view_previous",
 	"context":
 		[
 			{ "key": "setting.history_arrows", "operator": "equal", "operand": true },
@@ -7,14 +7,14 @@
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false }
 		]
 	},
-	{ "keys": ["alt+p"], "command": "repl_view_previous",
+	{ "keys": ["alt+p"], "command": "hol_repl_view_previous",
 	"context":
 		[
 			{ "key": "setting.history_arrows", "operator": "equal", "operand": false },
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["down"], "command": "repl_view_next",
+	{ "keys": ["down"], "command": "hol_repl_view_next",
 	"context":
 		[
 			{ "key": "setting.history_arrows", "operator": "equal", "operand": true },
@@ -22,35 +22,35 @@
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false }
 		]
 	},
-	{ "keys": ["alt+n"], "command": "repl_view_next",
+	{ "keys": ["alt+n"], "command": "hol_repl_view_next",
 	"context":
 		[
 			{ "key": "setting.history_arrows", "operator": "equal", "operand": false },
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["enter"], "command": "repl_enter", "args": {},
+	{ "keys": ["enter"], "command": "hol_repl_enter", "args": {},
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true },
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false }
 		]
 	},
-	{ "keys": ["enter"], "command": "repl_enter", "args": {},
+	{ "keys": ["enter"], "command": "hol_repl_enter", "args": {},
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true },
 			{ "key": "setting.auto_complete_commit_on_tab", "operand": true }
 		]
 	},
-	{ "keys": ["escape"], "command": "repl_escape", "args": {},
+	{ "keys": ["escape"], "command": "hol_repl_escape", "args": {},
 	"context":
 		[
 			{ "key": "auto_complete_visible", "operator": "equal", "operand": false },
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["backspace"], "command": "repl_backspace", "args": {},
+	{ "keys": ["backspace"], "command": "hol_repl_backspace", "args": {},
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true },
@@ -58,7 +58,7 @@
 			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
 		]
 	},
-	{ "keys": ["ctrl+backspace"], "command": "repl_ctrl_backspace", "args": {},
+	{ "keys": ["ctrl+backspace"], "command": "hol_repl_ctrl_backspace", "args": {},
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true },
@@ -66,37 +66,37 @@
 			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
 		]
 	},
-	{ "keys": ["left"], "command": "repl_left", "args": {},
+	{ "keys": ["left"], "command": "hol_repl_left", "args": {},
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["home"], "command": "repl_home", "args": {},
+	{ "keys": ["home"], "command": "hol_repl_home", "args": {},
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["shift+left"], "command": "repl_shift_left", "args": {},
+	{ "keys": ["shift+left"], "command": "hol_repl_shift_left", "args": {},
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["shift+home"], "command": "repl_shift_home", "args": {},
+	{ "keys": ["shift+home"], "command": "hol_repl_shift_home", "args": {},
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["ctrl+l"], "command": "repl_clear",
+	{ "keys": ["ctrl+l"], "command": "hol_repl_clear",
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
 		]
 	},
-	{ "keys": ["shift+ctrl+c"], "command": "subprocess_repl_send_signal", "args": {"signal": 2},  // sigint
+	{ "keys": ["shift+ctrl+c"], "command": "hol_subprocess_repl_send_signal", "args": {"signal": 2},  // sigint
 	"context":
 		[
 			{ "key": "setting.repl", "operator": "equal", "operand": true }
