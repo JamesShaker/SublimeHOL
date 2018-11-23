@@ -26,7 +26,7 @@
                  "children":
                     [
                         {"caption": "Selection", "command": "hol_repl_transfer_current", "args": {"scope": "selection"}},
-                        {"caption": "Selection (Quiet)", "args": {"scope": "selection", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec();"}},
+                        {"caption": "Selection (Quiet)", "command": "hol_repl_transfer_current", "args": {"scope": "selection", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec();"}},
                         {"caption": "Lines", "command": "hol_repl_transfer_current", "args": {"scope": "lines"}},
                         {"caption": "Lines (Quiet)", "command": "hol_repl_transfer_current", "args": {"scope": "lines", "prepend":"HOL_Interactive.toggle_quietdec();\n", "append":"\nHOL_Interactive.toggle_quietdec();"}},
                         {"caption": "File", "command": "hol_repl_transfer_current", "args": {"scope": "file"}}
@@ -83,20 +83,53 @@
                         "children":
                         [
                             {
-                                "command": "open_file", "args":
-                                {
-                                    "file": "${packages}/HOL/HOL.sublime-settings"
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/HOL/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
                                 },
-                                "caption": "Settings – Default"
+                                "caption": "Key Bindings – Default"
                             },
                             {
-                                "command": "open_file", "args":
-                                {
-                                    "file": "${packages}/User/HOL.sublime-settings"
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/HOL/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
                                 },
-                                "caption": "Settings – User"
+                                "caption": "Key Bindings – Default"
                             },
-                            { "caption": "-" }
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/HOL/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – User"
+                            }
                         ]
                     }
                 ]

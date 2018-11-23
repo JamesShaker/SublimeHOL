@@ -3,7 +3,7 @@
     "packages": [{
         "name": "HOL",
         "details": "https://github.com/JamesShaker/SublimeHOL",
-        "description": "A HOL Development Environment with colour REPL.",
+        "description": "A HOL ITP Development Environment with colour REPL.",
         "releases": [
             {
                 "sublime_text": "*",
