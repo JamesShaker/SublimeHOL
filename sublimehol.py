@@ -133,7 +133,7 @@ class MemHistory(History):
 class PersistentHistory(MemHistory):
     def __init__(self, external_id):
         super(PersistentHistory, self).__init__()
-        path = os.path.join(sublime.packages_path(), "User", ".SublimeHOLHistory")
+        path = os.path.join(sublime.packages_path(), "User", ".HOLHistory")
         if not os.path.isdir(path):
             os.makedirs(path)
         filepath = os.path.join(path, external_id + ".db")
@@ -428,7 +428,7 @@ class ReplView(object):
                     self._view.add_regions('sublimehol', regions, 'invalid',
                                            '', sublime.DRAW_EMPTY | sublime.DRAW_OUTLINED)
                 else:
-                    print('SublimeHOL: unknown REPL opcode: ' + opcode)
+                    print('HOL: unknown REPL opcode: ' + opcode)
         else:
             self.write(packet)
 

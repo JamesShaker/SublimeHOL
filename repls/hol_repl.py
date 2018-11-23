@@ -9,7 +9,7 @@ class HOLRepl(SubprocessRepl):
     TYPE = "hol_repl"
 
     def __init__(self, encoding, cmd=None, **kwds):
-        super(SublimeHOLRepl, self).__init__(encoding, cmd=cmd, preexec_fn=os.setsid, **kwds)
+        super(HOLRepl, self).__init__(encoding, cmd=cmd, preexec_fn=os.setsid, **kwds)
         self.write("current_backend := PPBackEnd.vt100_terminal;\n")
    
     def write(self, command):
@@ -37,7 +37,7 @@ class HOLRepl(SubprocessRepl):
 
         #run final command
         new_cmd = dep_string + command
-        return super(SublimeHOLRepl, self).write(new_cmd)
+        return super(HOLRepl, self).write(new_cmd)
     def send_signal(self, sig):
         if sig == signal.SIGTERM:
             self._killed = True

@@ -3,9 +3,9 @@
         "id": "tools",
         "children":
         [{
-            "caption": "SublimeHOL",
+            "caption": "HOL",
             "mnemonic": "H",
-            "id": "SublimeHOL",
+            "id": "HOL",
             "children":
             [
                 {"command": "hol_repl_open", 
@@ -18,7 +18,7 @@
                     "cmd": ["hol"],
                     "cwd": "$file_path",
                     "external_id": "hol",
-                    "syntax": "Packages/SublimeHOL/config/HOL/HOL.sublime-syntax"
+                    "syntax": "Packages/HOL/config/HOL/HOL.sublime-syntax"
                     }
                 },
                 { "caption": "-" },
@@ -85,7 +85,7 @@
                             {
                                 "command": "open_file", "args":
                                 {
-                                    "file": "${packages}/SublimeHOL/HOL.sublime-settings"
+                                    "file": "${packages}/HOL/HOL.sublime-settings"
                                 },
                                 "caption": "Settings – Default"
                             },

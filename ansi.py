@@ -148,7 +148,7 @@ class HolAnsiCommand(sublime_plugin.TextCommand):
         view.settings().set("hol_ansi_in_progress", True)
 
         view.settings().set("hol_ansi_enabled", True)
-        view.settings().set("color_scheme", "Packages/SublimeHOL/ANSI/ansi.tmTheme")
+        view.settings().set("color_scheme", "Packages/User/HOL/ansi.tmTheme")
         view.settings().set("draw_white_space", "none")
 
         # save the view's original scratch and read only settings
@@ -237,7 +237,7 @@ class HolAnsiColourBuildCommand(Default.exec.ExecCommand):
             self.process_trigger = val
         else:
             self.process_trigger = None
-            sublime.error_message("SublimeHOL - ANSI settings warning:\n\nThe setting ANSI_process_trigger has been set to an invalid value; must be one of 'on_finish' or 'on_data'.")
+            sublime.error_message("HOL - ANSI settings warning:\n\nThe setting ANSI_process_trigger has been set to an invalid value; must be one of 'on_finish' or 'on_data'.")
 
     @classmethod
     def clear_build_settings(self, settings):
@@ -353,7 +353,7 @@ def plugin_loaded():
     # load pluggin settings
     settings = sublime.load_settings("HOL.sublime-settings")
     # create ansi color scheme directory
-    ansi_cs_dir = os.path.join(sublime.packages_path(), "SublimeHOL", "ANSI")
+    ansi_cs_dir = os.path.join(sublime.packages_path(), "User", "HOL")
     if not os.path.exists(ansi_cs_dir):
         os.makedirs(ansi_cs_dir)
     # create ansi color scheme file

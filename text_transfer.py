@@ -8,9 +8,9 @@ import tempfile
 import binascii
 
 try:
-    from .hol import manager, SETTINGS_FILE
+    from .sublimehol import manager, SETTINGS_FILE
 except (ImportError, ValueError):
-    from hol import manager, SETTINGS_FILE
+    from sublimehol import manager, SETTINGS_FILE
 
 
 def default_sender(repl, text, view=None, repl_view=None):
