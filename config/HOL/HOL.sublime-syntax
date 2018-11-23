@@ -56,11 +56,11 @@ contexts:
       scope: constant.language.hol
 
     # comparison operators
-    - match: '<\=|>\=|<|>|\!\=|\=|:=|>>|>-'
+    - match: '<\=|>\=|<|>|\!\=|\=|:='
       scope: keyword.operator.assignment.hol
 
     # arithmetic operators
-    - match: '\*|\+|-|\/|~|\^|div|mod|::|@'
+    - match: '\*|\+|-|\/|~|\^|div|mod|::|@|>>|>-|THEN|THEN1|THENL|>\||\\'
       scope: keyword.operator.arithmetic.hol
 
     # logical operators
