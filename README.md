@@ -1,5 +1,7 @@
-HOL for Sublime Text
+
+HOL for Sublime Text (DEPRECATED)
 =====================================
+**Please note this plugin is deprecated. Please use SublimeHOL2 (https://github.com/JamesShaker/SublimeHOL2)**
 
 A HOL ITP (https://hol-theorem-prover.org/) development environment built on top of slimmed down, heavily modified versions of SublimeREPL (https://github.com/wuub/SublimeREPL), SublimeANSI (https://github.com/aziz/SublimeANSI), and SML-syntax (https://github.com/Takaia/SML-syntax) put together.
 
